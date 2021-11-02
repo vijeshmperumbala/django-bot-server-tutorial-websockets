@@ -1,0 +1,60 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="shortcut icon" href="{% static 'chatbot_tutorial/favicon.ico' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'chatbot_tutorial/favicon.ico' %}" type="image/x-icon">
+
+        <link rel="stylesheet" href="{% static 'chatbot_tutorial/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'chatbot_tutorial/css/chat.css' %}">
+       
+        <link href="{% static 'chatbot_tutorial/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <base target="_blank"/>
+        <title>Websockets Bot_log</title>
+    </head>
+    <body>
+        <!-- Wrap all page content here -->
+
+        <div>
+            <div class="block-content">
+                <table class="table table-vcenter">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 50px;">#</th>
+                            <th>User Name</th>
+                            <th class="text-center" style="width: 10%;">Stupid</th>
+                            <th class="text-center" style="width: 10%;">Fat</th>
+                            <th class="text-center" style="width: 10%;">Dumb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in log_data %}
+                            <tr>
+                                <th class="text-center" scope="row">{{forloop.counter}}</th>
+                                <td class="font-w600">
+                                    <span>{{log.user}}</span>
+                                </td>
+                                <td class="text-center">
+                                    <span>{{log.stupid}}</span>
+                                </td>
+                                <td class="text-center">
+                                    <span>{{log.fat}}</span>
+                                </td>
+                                <td class="text-center">
+                                    <span>{{log.dumb}}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </body>
+</html>

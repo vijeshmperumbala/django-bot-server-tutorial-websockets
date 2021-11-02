@@ -1,0 +1,4 @@
+Django==1.10.6
+channels==1.1.8
+requests==2.13.0
+psycopg2==2.8.6
